@@ -1,21 +1,15 @@
 const mongoose = require("mongoose");
 
 const userDataSchema = new mongoose.Schema({
-  title: {
-    type: String,
-  },
-  poster: {
-    type: String,
-  },
-  year: {
-    type: Number,
-  },
-  id: {
-    type: String,
-  },
+  username: String,
 });
 
-const userData = mongoose.model("userData", userDataSchema);
+const fullUserData = new mongoose.Schema({
+  username: String,
+  theme: String,
+});
+
+const userData = mongoose.model("fullUserData", fullUserData);
 
 module.exports = {
   userData,
